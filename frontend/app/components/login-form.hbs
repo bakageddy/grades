@@ -1,0 +1,21 @@
+<form class="auth__form">
+  <input
+    class="input__member"
+    type="number"
+    placeholder="Register No"
+    value={{this.register_no}}
+    {{on 'input' this.handle_input_register}}
+  />
+  <input
+    class="input__member"
+    type="password"
+    placeholder="Password"
+    value={{this.password}}
+    {{on 'input' this.hande_input_password}}
+  />
+  <button class="input__member btn" type="button" {{on 'click' this.handle_click}}>
+    Login
+  </button>
+  <p class="auth__note">New to the site? <LinkTo class="auth__redirect link" @route="register">Register</LinkTo></p>
+</form>
+{{yield}}

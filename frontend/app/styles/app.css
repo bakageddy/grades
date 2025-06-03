@@ -1,0 +1,70 @@
+:root {
+  --pine-fg: #575279;
+  --pine-bg: #fffaf3;
+  --pine-subtle: #6e6a86;
+  --pine-primary: ##c4a7e7;
+  --pine-secondary: #9ccfd8;
+  --pine-tertiary: #31748f;
+  --pine-warn: #f6c177;
+  --pine-err: #eb6f92;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  background-color: var(--pine-bg);
+  color: var(--pine-fg);
+}
+
+html, body {
+  width:100%;
+  height:100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+input, button, select {
+  appearance: none;
+  border: none;
+}
+
+.auth__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 0;
+}
+
+.input__member {
+  background-color: var(--pine-primary);
+  color: var(--pine-fg);
+
+  font-family: 'Jost', sans-serif;
+
+  padding: 0.75rem;
+  margin: 0.4rem;
+
+  &:focus {
+    border: none;
+  }
+}
+
+.btn {
+  padding: 0.4rem 0.8rem;
+  margin: 0.4rem;
+  background-color: var(--pine-secondary);
+  color: var(--pine-bg);
+}
+
+/* Component Classes */
+
+.auth__note {
+  font-family: 'DM Sans', sans-serif;
+}
+
