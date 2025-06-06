@@ -1,4 +1,9 @@
-<form class="auth__form">
+<h3 class="auth__form__header">Login</h3>
+<form
+  class="auth__form"
+  {{!-- action="http://localhost:42069/auth/login" --}}
+  {{!-- method="POST" --}}
+>
   <input
     class="input__member"
     type="number"
@@ -6,16 +11,15 @@
     value={{this.register_no}}
     {{on 'input' this.handle_input_register}}
   />
-  <input
-    class="input__member"
-    type="password"
-    placeholder="Password"
-    value={{this.password}}
-    {{on 'input' this.hande_input_password}}
-  />
-  <button class="input__member btn" type="button" {{on 'click' this.handle_click}}>
+
+  <button
+    class="input__member btn" type="button" {{on 'button' this.handle_submit}}
+  >
     Login
   </button>
-  <p class="auth__note">New to the site? <LinkTo class="auth__redirect link" @route="register">Register</LinkTo></p>
+
+  <p class="auth__note">
+    New to the site? <LinkTo class="auth__redirect link" @route="register">Register</LinkTo>
+  </p>
+  {{yield}}
 </form>
-{{yield}}

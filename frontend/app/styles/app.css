@@ -10,8 +10,8 @@
 }
 
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   background-color: var(--pine-bg);
   color: var(--pine-fg);
 }
@@ -19,13 +19,16 @@
 html, body {
   width:100%;
   height:100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 main {
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 input, button, select {
@@ -44,15 +47,20 @@ input, button, select {
 .input__member {
   background-color: var(--pine-primary);
   color: var(--pine-fg);
-
-  font-family: 'Jost', sans-serif;
-
+  font-family: Jost, sans-serif;
   padding: 0.75rem;
   margin: 0.4rem;
 
   &:focus {
     border: none;
   }
+}
+
+input.input__member {
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--pine-subtle);
+  border-radius: 2px;
 }
 
 .btn {
@@ -68,3 +76,9 @@ input, button, select {
   font-family: 'DM Sans', sans-serif;
 }
 
+.auth__form__header {
+  font-family: Jost, sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}

@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
 set -xe
-ls *.go */*.go | entr -rcs "go build && echo 'Finished Rebuilding' && ./grades"
+ls *.go */*.go | entr -rcs "echo 'Started Server' && go run main.go"
