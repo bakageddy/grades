@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/bakageddy/grades/data"
 	"github.com/bakageddy/grades/handlers"
 	_ "github.com/glebarez/go-sqlite"
 )
@@ -24,17 +25,8 @@ func main() {
 		return
 	}
 
-	database, err := sql.Open("sqlite", "file.db")
-	if err != nil {
-		log.Fatalf("Failed to open database: %s\n", err.Error())
-		return
-	}
-
-	_, db_err := database.Exec(string(body))
-	if db_err != nil {
-		log.Fatalf("Failed to apply migrations: %s\n", db_err.Error())
-		return
-	}
+	db := data.Init()
+	db.ApplyMigrations(string(body))
 
 	auth_handle := handlers.Handlers {
 		DB: database,

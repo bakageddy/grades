@@ -14,3 +14,13 @@ CREATE TABLE IF NOT EXISTS SubjectDatabase(
 	subject_name TEXT UNIQUE NOT NULL,
 	subject_credits INTEGER NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS StudentGradeCache(
+	register_no INTEGER REFERENCES Users(register_no),
+	total_credits INTEGER NOT NULL,
+	subject_credits INTEGER NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS subject_name_searchidx ON SubjectDatabase(subject_name);
+CREATE INDEX IF NOT EXISTS student_grade_cache_fkey ON StudentGradeCache(register_no);
+CREATE INDEX IF NOT EXISTS score_sheet_fkey ON ScoreSheet(register_no);
